@@ -4,22 +4,33 @@ The project you're looking at is an [express.js](http://expressjs.com) project. 
 ## Performance tracking
 
 ### Start with tracking
-![alt tag]()
+The first screenshot without any changes:
+![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/start.png)
 
+### Assignment 3 - With Semantic HTML and CSS optimization
+**Action points:** 
+- Changed HTML elements to HTML5 elements.
+- Added CSS classes according to the BEM method.
+- Changed CSS markup (for example: FlexBox instead of floating).
 
-### With Semantic HTML and CSS optimization - Assignment 3
-![alt tag]()
-### With image optimazation - Asignment 4
-1 - header.png -> header.jpg (compressed)
-![alt tag]()
+![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/html-css.png)
 
+### Assignment 4 - With image optimazation
+**Action points:** 
+0 - Header image (network tab in development tools)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/network_tab.png)
 
-2 - Sprites
-![alt tag]()
+1 - header.png -> header.jpg (+ compressed)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/network_tab.png)
+
+2 - Sprites (menu icons)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/sprites.png)
 
 ### JavaScript WebApp - Assignment 5
-Remove jQuery
-![alt tag]()
+**Action points:** 
 
-Add WebApp functionalities
-![alt tag]()
+1 - Removed jQuery
+![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/no-jquery.png)
+
+2 - Transformed into a Single Page App
+![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/webapp.png)
