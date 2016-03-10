@@ -21,7 +21,7 @@ The first screenshot without any changes:
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/network_tab.png)
 
 **1 - header.png -> header.jpg (+ compressed):**
-![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/network_tab.png)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/header-image.png)
 
 **2 - Sprites (menu icons):**
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/sprites.png)
