@@ -1,44 +1,52 @@
-<div class="appearance" data-id="{{ item.id }}">
-    <div class="appearance-left">
-        <img src="{{ item.image.url }}">
+<section id="appearance" class="appearance flexbox" data-id="{{ item.id }}">
+    
+    <figure class="appearance__left">
+        <img class="appearance__img" src="{{ item.image.url }}"> 
         {{#each item.product_occurrences}}
-            <div class="product-indicator" style="top: {{position.y}}%; left: {{position.x}}%;" data-uuid="{{product.id}}"></div>
+        <div class="appearance__indicator" style="top: {{position.y}}%; left: {{position.x}}%;" data-uuid="{{product.id}}"> </div>
         {{/each}}
-    </div>
-    <div class="appearance-right">
-        <h2><img class="avatar" src="{{ item.subject.avatar.url }}"> {{ item.subject.name }}</h2>
-        <h1>{{ item.title }}</h1>
-
-        <div class="appearance-products">
-            <h1>Products</h1>
-            <div class="appearance-products-inner">
+    </figure>
+    
+    <section class="appearance__right">
+        <figure class="appearance__person flexbox">
+            <img class="appearance__person__avatar" src="{{ item.subject.avatar.url }}">
+            <figcaption><h2>{{ item.subject.name }}</h2></figcaption>
+        </figure>
+        <header>
+            <h1>{{ item.title }}</h1>
+        </header>
+        <div class="appearance__products">
+            <header>
+                <h1>Products</h1>
+            </header>
+            <div class="appearance__products__inner">
                 {{#each products}}
-                    <div class="product" data-uuid="{{id}}">
-                        <div class="actual">
-                            <div class="image">
-                                <h1>Actual</h1>
-                                <img src="{{image.url}}">
-                            </div>
-                            <div class="info">
-                                <h1>{{ name }}</h1>
-                                <h2>{{ brand.name }}</h2>
-                            </div>
+                <article class="appearance__product" data-uuid="{{id}}">
+                    <div class="appearance__product__actual">
+                        <div class="appearance__product__actual__image">
+                            <h2>Actual</h2>
+                            <img src="{{image.url}}">
                         </div>
-                        {{#each similars}}
-                            <div class="similar">
-                                <div class="image">
-                                    <h1>{{ similar_type }}</h1>
-                                    <img src="{{image.url}}">
-                                </div>
-                                <div class="info">
-                                    <h1>{{ name }}</h1>
-                                    <h2>{{ brand.name }}</h2>
-                                </div>
-                            </div>
-                        {{/each}}
+                        <div class="appearance__product__info">
+                            <h3>{{ name }}</h3>
+                            <h4>{{ brand.name }}</h4>
+                        </div>
                     </div>
+                    {{#each similars}}
+                    <div class="appearance__product__similar">
+                        <div class="appearance__product__similar__image">
+                            <h2>{{ similar_type }}</h3>
+                            <img src="{{image.url}}">
+                        </div>
+                        <div class="appearance__product__info">
+                            <h3>{{ name }}</h3>
+                            <h4>{{ brand.name }}</h4>
+                        </div>
+                    </div>
+                    {{/each}}
+                </article>
                 {{/each}}
             </div>
         </div>
-    </div>
-</div>
+    </section>
+</section>
