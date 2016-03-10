@@ -9,7 +9,9 @@ The first screenshot without any changes:
 
 ### With Semantic HTML and CSS optimisation
 **0 - Changed HTML elements to HTML5 elements.**
+
 **1 - Added CSS classes according to the BEM method.**
+
 **2 - Changed CSS markup (for example: FlexBox instead of floating).**
 
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/html-css.png)
