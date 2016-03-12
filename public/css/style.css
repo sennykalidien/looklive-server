@@ -569,7 +569,7 @@ body {
     padding: 1em;
     background: #f9f9f9;
     margin: 0 0 2em;
-    max-width: 400px;
+    width: 400px;
 }
 
 .appearance__products__inner {
@@ -684,7 +684,7 @@ body {
         -webkit-flex: 0 1 33.33%;
         -ms-flex: 0 1  33.33%;
         flex: 0 1 33.33%;
-    }   
+    } 
 }
 
 @media (min-width: 70em) {

@@ -1,6 +1,14 @@
 # Performance Matters - Week 1
 Welcome to my first week assignment for Performance Matters.
 
+Note to teacher: 
+
+Free time in the weekend === Adding Critical CSS & a making a start to a Gulp Pipeline.
+
+I know I’m late with this extra assignments, so this doesn’t need to be graded. Just doing it for my own pleasure. Knowledge
+is power…
+
+
 ## Performance tracking
 
 ### Start with tracking
@@ -32,3 +40,6 @@ The first screenshot without any changes:
 
 **2 - Transformed into a Single Page App:**
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/webapp.png)
+
+### EXTRA: Cricital CSS + Gulp
+![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/critical-css.png)
