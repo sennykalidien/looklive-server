@@ -11,7 +11,7 @@
     </script>
     
     <noscript><link rel="stylesheet" href="/assets/css/style.css"></noscript>
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400' rel='stylesheet' type='text/css'>
+    <!--<link href='https://fonts.googleapis.com/css?family=Raleway:400' rel='stylesheet' type='text/css'>-->
 </head>
 
 <body>
@@ -53,7 +53,6 @@
     
     <!-- LIBS -->
     <script src="/assets/js/lib/routie.min.js"></script> 
-    <script src="/assets/js/lib/nanoajax.min.js"></script> 
     
     <!-- MAIN JS -->
     <script src="/assets/js/app.js"></script>
@@ -63,13 +62,13 @@
     <script src="/assets/js/modules/page-module.js"></script> 
     
     <!-- Service Worker -->
-    <script id="codeSource">
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js', { scope: './' })
-                .then(function(reg) { console.log('registered sw scoped to ' + reg.scope)});
-        } else {
-            console.log('ServiceWorker is not supported');
-        }
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js', { scope: './' })
+            .then(function(reg) { console.log('registered sw scoped to ' + reg.scope)});
+    } else {
+        console.log('ServiceWorker is not supported');
+    }
     </script>
     <script src="sw.js"></script>
 </body>

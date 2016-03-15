@@ -2,7 +2,7 @@
 	ROUTER MODULE [with router lib: Routie]
 *********************************************************/      
 APP.router = (function () {
-    var init = function() {
+    function init () {
         routie({
             'home': function() {
                 APP.page.feed();
