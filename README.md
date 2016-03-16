@@ -54,7 +54,7 @@ I began this performance tracking with a aggregated time of 5.32 seconds. My fir
 - changing CSS classes according to the BEM method 
 - adding better CSS markup with flexbox and transition: translate; 
 
-These points didn't gave me much improvement in speed. Maybe in theory 1-3 ms. Practically nothing. The big changes in speed came around when I began to optimize the images (mainly the header.png image --> header.jpg) and remove the jQuery script. I bassicly bisected the speed, from 5.32 --> 2.21. 
+These points didn't gave me much improvement in speed. Maybe in theory 1-3 ms. Practically nothing. The big changes in speed came around when I began to optimize the images (mainly the header.png image --> header.jpg) and remove the jQuery script. I bassicly bisected the aggregated time from 5.32 --> 2.21. 
 
 Transforming the website into a SPA increased the loading time by 76m (total: 2.99), which makes sense, because I've added some libraries and JavaScript code. 
 
