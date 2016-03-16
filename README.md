@@ -4,7 +4,7 @@ Tested *without** throttling, so with a standard WiFi connection.
 ## Performance tracking: opdr 1
 
 ### Start with tracking
-** 0 - The first screenshot without any changes.**
+**0 - The first screenshot without any changes.**
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/start.png)
 
 ### With Semantic HTML and CSS optimisation
@@ -41,7 +41,7 @@ Few more ms won.
 **2 - Transformed into a Single Page App:**
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/webapp.png)
 
-Andddd it's gone... More ms has been added because of more JS code.
+Andddd it's gone... More ms has been added to the aggregated time because of more JS code (scripts + libraries).
 
 ### EXTRA: Cricital CSS + Gulp
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/critical-css.png)
@@ -49,4 +49,13 @@ Andddd it's gone... More ms has been added because of more JS code.
 Yes, we are winning again!
 
 ### Conclusion
-We won some great speed, mostly with optimizing header image and removing jQuery. Cricical CSS + gulp helped too, with half a second.
+I began this performance tracking with a aggregated time of 5.32 seconds. My first point of action to the performance were: 
+- changing the HTML structure 
+- changing CSS classes according to the BEM method 
+- adding better CSS markup with flexbox and transition: translate; 
+
+These points didn't gave me much improvement in speed. Maybe in theory 1-3 ms. Practically nothing. The big changes in speed came around when I began to optimize the images (mainly the header.png image --> header.jpg) and remove the jQuery script. I bassicly bisected the speed, from 5.32 --> 2.21. 
+
+Transforming the website into a SPA increased the loading time by 76m (total: 2.99), which makes sense, because I've added some libraries and JavaScript code. 
+
+My final change, adding Cricical CSS + making a gulp pipeline reduced the time with 44ms, making a nice aggregated time of 2.55 s in total. 
