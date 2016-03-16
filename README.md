@@ -1,7 +1,7 @@
 # Performance Matters
 Tested *without** throttling, so with a standard WiFi connection.
 
-## Performance tracking
+## Performance tracking: opdr 1
 
 ### Start with tracking
 ** 0 - The first screenshot without any changes.**
@@ -47,3 +47,6 @@ Andddd it's gone... More ms has been added because of more JS code.
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/critical-css.png)
 
 Yes, we are winning again!
+
+### Conclusion
+We won some great speed, mostly with optimizing header image and removing jQuery. Cricical CSS + gulp helped too, with half a second.
