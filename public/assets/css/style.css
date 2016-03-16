@@ -295,10 +295,9 @@ body {
 ## HEADER
 --------------------------------------------------------------*/
 .header__logo {
-    max-width: 10em;  
     -webkit-box-flex: 0;  
-    -webkit-flex: 0 1 20%;  
-    -ms-flex: 0 1 20%;  
+    -webkit-flex: 0 1 100%;  
+    -ms-flex: 0 1 100%;  
     flex: 0 1 100%; 
     padding: .5em 0 .5em 1em;
 }
@@ -359,37 +358,37 @@ body {
 
 /* ICONS */
 .header__menu__icn__home {
- background: url("/assets/images/icons/icns-3319a2fd.svg") 50% -20% no-repeat;
+ background: url("/dist/images/icons/icns-3319a2fd.svg") 50% -20% no-repeat;
  width: 25px;
  height: 23.09px;
 }
 
 .header__menu__icn__latest {
- background: url("/assets/images/icons/icns-3319a2fd.svg") 0 78% no-repeat;
+ background: url("/dist/images/icons/icns-3319a2fd.svg") 0 78% no-repeat;
  width: 23.8px;
  height: 25px;
 }
 
 .header__menu__icn__people {
- background: url("/assets/images/icons/icns-3319a2fd.svg") 100% -17% no-repeat;
+ background: url("/dist/images/icons/icns-3319a2fd.svg") 100% -17% no-repeat;
  width: 25px;
  height: 23.33px;
 }
 
 .header__menu__icn__shows {
- background: url("/assets/images/icons/icns-3319a2fd.svg") 100% 68% no-repeat;
+ background: url("/dist/images/icons/icns-3319a2fd.svg") 100% 68% no-repeat;
  width: 25px;
  height: 22.48px;
 }
 
 .header__menu__icn__music {
- background: url("/assets/images/icons/icns-3319a2fd.svg") 47.6% 78% no-repeat;
+ background: url("/dist/images/icons/icns-3319a2fd.svg") 47.6% 78% no-repeat;
  width: 25px;
  height: 25px;
 }
 
 .header__menu__icn__brands {
- background: url("/assets/images/icons/icns-3319a2fd.svg") 0 -29% no-repeat;
+ background: url("/dist/images/icons/icns-3319a2fd.svg") 0 -29% no-repeat;
  width: 25px;
  height: 25px;
 }
@@ -450,6 +449,10 @@ body {
     -ms-flex: 0 1 100%; 
     flex: 0 1 100%;
     position: relative;
+}
+
+.feed__img a img { 
+    display: block;
 }
 
 .feed__person { 
@@ -648,8 +651,7 @@ body {
             -ms-flex-flow: row wrap;
                 flex-flow: row wrap;      
     }
-    .header__logo {
-        max-width: 10em;  
+    .header__logo { 
         -webkit-box-flex: 0;  
         -webkit-flex: 0 1 20%;  
         -ms-flex: 0 1 20%;  

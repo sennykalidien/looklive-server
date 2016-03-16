@@ -2,22 +2,23 @@
 <html>
 <head>
     <title>LookLive</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
     <style> /* CRITCAL CSS: https://www.smashingmagazine.com/2015/08/understanding-critical-css/ */
-    *,html{font-size:100%}*,body{margin:0}#header,i{overflow:hidden}*{padding:0;vertical-align:baseline;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}html{overflow-y:scroll;overflow-x:hidden;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background:#fff}body{color:333;font:Raleway,Helvetica,Arial,sans-serif;background-color:#f1f1f1;max-width:1920px}ul{list-style:none}a img{border:0}img{vertical-align:none;height:auto;max-width:100%}figure,footer,header,nav{display:block}:disabled{color:graytext;background-color:buttonface}a{text-decoration:none;color:#00B7FF}i{text-indent:200%;white-space:nowrap;display:inline-block}.flexbox{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex}#header{width:100%;background-color:#252525;-webkit-flex-flow:column wrap;-ms-flex-flow:column wrap;flex-flow:column wrap;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}.header__logo{max-width:10em;-webkit-box-flex:0;-webkit-flex:0 1 20%;-ms-flex:0 1 20%;flex:0 1 100%;padding:.5em 0 .5em 1em}.header__banner{-webkit-box-flex:0;-webkit-flex:0 1 100%;-ms-flex:0 1 100%;flex:0 1 100%}.header__menu__row{list-style:none;margin:0 auto;-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center}.header__menu__list{height:100%;line-height:30px;margin-right:15px}.header__menu__link{color:#fff;text-decoration:none}.header__menu__icn__home{background:url(/assets/images/icons/icns-3319a2fd.svg) 50% -20% no-repeat;width:25px;height:23.09px}.header__menu__icn__latest{background:url(/assets/images/icons/icns-3319a2fd.svg) 0 78% no-repeat;width:23.8px;height:25px}.header__menu__icn__people{background:url(/assets/images/icons/icns-3319a2fd.svg) 100% -17% no-repeat;width:25px;height:23.33px}.header__menu__icn__shows{background:url(/assets/images/icons/icns-3319a2fd.svg) 100% 68% no-repeat;width:25px;height:22.48px}.header__menu__icn__music{background:url(/assets/images/icons/icns-3319a2fd.svg) 47.6% 78% no-repeat;width:25px;height:25px}.header__menu__icn__brands{background:url(/assets/images/icons/icns-3319a2fd.svg) 0 -29% no-repeat;width:25px;height:25px}@media (min-width:52em){#header{-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap}.header__logo{max-width:10em;-webkit-box-flex:0;-webkit-flex:0 1 20%;-ms-flex:0 1 20%;flex:0 1 20%}}</style>
+    *,html{font-size:100%}*,body{margin:0}#header,i{overflow:hidden}*{padding:0;vertical-align:baseline;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}html{overflow-y:scroll;overflow-x:hidden;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background:#fff}body{color:333;font:Raleway,Helvetica,Arial,sans-serif;background-color:#f1f1f1;max-width:1920px}ul{list-style:none}a img{border:0}img{vertical-align:none;height:auto;max-width:100%}figure,footer,header,nav{display:block}:disabled{color:graytext;background-color:buttonface}a{text-decoration:none;color:#00B7FF}i{text-indent:200%;white-space:nowrap;display:inline-block}.flexbox{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex}#header{width:100%;background-color:#252525;-webkit-flex-flow:column wrap;-ms-flex-flow:column wrap;flex-flow:column wrap;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}.header__logo{max-width:10em;-webkit-box-flex:0;-webkit-flex:0 1 20%;-ms-flex:0 1 20%;flex:0 1 100%;padding:.5em 0 .5em 1em}.header__banner{-webkit-box-flex:0;-webkit-flex:0 1 100%;-ms-flex:0 1 100%;flex:0 1 100%}.header__menu__row{list-style:none;margin:0 auto;-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center}.header__menu__list{height:100%;line-height:30px;margin-right:15px}.header__menu__link{color:#fff;text-decoration:none}.header__menu__icn__home{background:url(/dist/images/icons/icns-3319a2fd.svg) 50% -20% no-repeat;width:25px;height:23.09px}.header__menu__icn__latest{background:url(/dist/images/icons/icns-3319a2fd.svg) 0 78% no-repeat;width:23.8px;height:25px}.header__menu__icn__people{background:url(/dist/images/icons/icns-3319a2fd.svg) 100% -17% no-repeat;width:25px;height:23.33px}.header__menu__icn__shows{background:url(/dist/images/icons/icns-3319a2fd.svg) 100% 68% no-repeat;width:25px;height:22.48px}.header__menu__icn__music{background:url(/dist/images/icons/icns-3319a2fd.svg) 47.6% 78% no-repeat;width:25px;height:25px}.header__menu__icn__brands{background:url(/dist/images/icons/icns-3319a2fd.svg) 0 -29% no-repeat;width:25px;height:25px}@media (min-width:52em){#header{-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap}.header__logo{max-width:10em;-webkit-box-flex:0;-webkit-flex:0 1 20%;-ms-flex:0 1 20%;flex:0 1 20%}}</style>
     
     <script> /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
     !function(e){"use strict";var n=function(n,t,o){function i(e){return a.body?e():void setTimeout(function(){i(e)})}function r(){l.addEventListener&&l.removeEventListener("load",r),l.media=o||"all"}var d,a=e.document,l=a.createElement("link");if(t)d=t;else{var s=(a.body||a.getElementsByTagName("head")[0]).childNodes;d=s[s.length-1]}var f=a.styleSheets;l.rel="stylesheet",l.href=n,l.media="only x",i(function(){d.parentNode.insertBefore(l,t?d:d.nextSibling)});var u=function(e){for(var n=l.href,t=f.length;t--;)if(f[t].href===n)return e();setTimeout(function(){u(e)})};return l.addEventListener&&l.addEventListener("load",r),l.onloadcssdefined=u,u(r),l};"undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this);       
     loadCSS('assets/css/style.css');
     </script>
     
-    <noscript><link rel="stylesheet" href="/assets/css/style.css"></noscript>
-    <!--<link href='https://fonts.googleapis.com/css?family=Raleway:400' rel='stylesheet' type='text/css'>-->
+    <noscript><link rel="stylesheet" href="/dist/css/style.css"></noscript>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
     <header id="header" class="flexbox">
         <figure class="header__logo">
-            <a href="#home"><img src="/assets/images/logo.png"></a>
+            <a href="#home"><img src="/dist/images/logo.png"></a>
         </figure>
         <nav id="nav" class "header__menu" role="menu">
             <ul class="header__menu__row flexbox">
@@ -42,7 +43,7 @@
             </ul>
         </nav>
         <figure class="header__banner" role="banner">
-            <img src="/assets/images/header.jpg">
+            <img src="/dist/images/header.jpg">
         </figure>
     </header>
    
@@ -52,14 +53,10 @@
     </footer>
     
     <!-- LIBS -->
-    <script src="/assets/js/lib/routie.min.js"></script> 
+    <script src="/dist/js/lib/routie.min.js"></script> 
     
     <!-- MAIN JS -->
-    <script src="/assets/js/app.js"></script>
-    
-    <!-- Modules -->
-    <script src="/assets/js/modules/router-module.js"></script>
-    <script src="/assets/js/modules/page-module.js"></script> 
+    <script src="/dist/js/app.js"></script>
     
     <!-- Service Worker -->
     <script>

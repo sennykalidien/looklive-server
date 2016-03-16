@@ -4,35 +4,19 @@ var currentCacheName = 'looklive-assets-1.1';
 
 this.addEventListener('install', function(event) {
     event.waitUntil(
-        caches.open('looklive-assets-1.0').then(function(cache) {
-            return cache.addAll([
-                './',
-                '/assets/css/style.css',
-                '/assets/images/header.jpg',
-                '/assets/images/logo.png',
-                '/assets/images/icons/icns-3319a2fd.svg',
-                '/assets/js/lib/routie.min.js',
-                '/assets/js/app.js',
-                '/assets/js/modules/page-module.js',
-                '/assets/js/modules/router-module.js',
-                '/sw.js',
-                '/api/feed'
-            ]);
-        }),
         caches.open(currentCacheName).then(function(cache) {
             console.log('caching', currentCacheName);
             return cache.addAll([
                 './',
-                '/assets/css/style.css',
+                '/dist/css/style.css',
                 '/assets/images/header.jpg',
                 '/assets/images/logo.png',
-                '/assets/images/icons/icns-3319a2fd.svg',
-                '/assets/js/lib/routie.min.js',
-                '/assets/js/app.js',
-                '/assets/js/modules/page-module.js',
-                '/assets/js/modules/router-module.js',
+                '/dist/images/icons/icns-3319a2fd.svg',
+                '/dist/js/lib/routie.min.js',
+                '/dist/js/app.js',
                 '/sw.js',
-                '/api/feed'
+                '/api/feed',
+                'https://fonts.googleapis.com/css?family=Raleway:400'                
             ]);
         })      
     );
@@ -45,7 +29,7 @@ this.addEventListener('activate', function(event) {
 			return Promise.all(
 				cacheNames
 					.filter(function(cacheName) {
-						return cacheName.startsWith('looklive-assets-1.0');
+						return cacheName.startsWith('looklive-assets-1.');
 					})
 					.filter(function(cacheName) {
 						return cacheName !== currentCacheName;
@@ -60,7 +44,7 @@ this.addEventListener('activate', function(event) {
 });
 
 this.addEventListener('fetch', function(event) {
-    event.respondWith(
+    event.respondWith(        
         caches.match(event.request)
             .then(function(response) {
                 if(response) {

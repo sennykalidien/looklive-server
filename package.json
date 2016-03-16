@@ -19,6 +19,8 @@
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-critical": "^0.2.0",
+    "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.1",
     "gulp-svg-sprite": "^1.2.19"
   }
 }
