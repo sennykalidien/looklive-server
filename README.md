@@ -72,7 +72,7 @@ NOTE: Forgot to make a branch for the Service Worker :-(
 
 
 ### With Service Worker
-![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/service-worker.png)
+![Service Worker performance](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/service-worker.png)
 
 In the Service Worker I cached all static files (HTML, CSS, JS, images) and the API feed *on install*. This gives me a HUGE improvement! From 2.55s --> 1.38s = 1.17 seconds won in time. :shipit:
 
@@ -107,3 +107,80 @@ For a web app to be considered as “progressive” it must do these things:
 ### Online web server: Digital Ocean 
 [link to web server](https://performance.directzichtbaar.nl/)
 
+### Conclusion
+
+
+## Performance tracking: assignment week 3
+
+### Task Managers
+For this project I've already used Gulp, proudly I must say, as my Task Manager and I love it! But why am I using Gulp, or a task manager for that matter? Let's dive in! 
+
+**What's a task manager**
+A task manager is a automated JavaScript manager. They automate our task and excecute them without even thinking about it twice, if set up correctly.
+
+**Why use a task manager**
+When you are creating (coding) en deploying in a front-end development website or application, task managers can be handy to take over some of your tasks. Most task managers use Node, and require you to create tasks and install plugins.
+
+Examples of tasks could be:
+- Watching file changes, and when they do:
+- Concatenate and minify files
+- Add prefixes for files in different browsers
+- Lint JavaScript
+
+
+**Popular task managers**
+Most common task managers used nowadays are: 
+- Gulp
+- Grunt
+
+They both use Node, and both require you to craete tasks and install plugins. But the main difference between the two is: speed:  in how they deal with their automation tasks on the inside. *Gulp uses Node streams while Grunt uses temp files.*
+
+Compared to in-memory operations, disk writes are slow which means that Gulp has a big speed advantage (for now).
+
+[source](http://www.hongkiat.com/blog/gulp-vs-grunt/)
+
+**Why I'm using Gulp**
+Gulp is easy to set up, and give me everything I need to work with. It also looked and felt easier to set up and use, which was the biggest reason why I used Gulp. It seemed like the best task mange for a beginner (noob) like me. Although Grunt is more used. 
+
+"Grunt currently receives about 37,000 downloads a day on average, Gulp gets a bit more than half that, near the 23,000 mark."
+
+"Gulp is a good example that code over configuration can be a good thing when configuration gets a bit confusing. Other people say that while this is true and Gulp is easier to read, it is more difficult to write because piping can be a bit confusing."
+
+I agree with the things mentioned above. 
+
+[source](http://www.hongkiat.com/blog/gulp-vs-grunt/)
+
+I Use Gulp for:
+- Source Maps (link the minified JS or CSS files in the browser development tools to the original (unminified) file)
+- Watch (if there is a file change, do certain tasks)
+- Concate (Bundle all files into one single file)
+- Minify JS and CSS
+- Babel (ES6 --> ES5)
+- Image sprites
+- Image optimization (optimize size)
+
+
+### Optimize HTTP Request
+Action points with Gulp:
+- Concatenate (bundle JS and CSS)
+- Uglify (minify JS)
+- CSS Nano (minify CSS)
+
+![HTTP request](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/gulp-minified.png)
+
+We keep on winning, from 1.80s --> 1.38s. That's 0.42s won in time. Yes!
+
+### Optimize Content Images
+![HTTP request](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/gulp-minified.png)
+
+### Optimize Web Fonts
+- FOIT vs FOUT
+
+
+### Optimize Content Images
+
+
+### EXTRA: Staging + Production environment
+
+
+### EXTRA: Cookies
