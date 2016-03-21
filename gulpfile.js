@@ -9,7 +9,8 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
     imageop = require('gulp-image-optimization'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    responsive = require('gulp-responsive-images'),
     filesize = require('gulp-filesize');
 
 
@@ -36,6 +37,7 @@ var svgConfig = {
         }
     }
 };
+
 
 var inputPaths = { 
     'css': './public/src/css/*.css',
@@ -82,11 +84,11 @@ gulp.task('critical', function (cb) { //src: http://fourkitchens.com/blog/articl
 
 
 gulp.task('scripts', function() {
-  return gulp.src(inputPaths.js)
+    gulp.src(inputPaths.js)
     .pipe(sourcemaps.init())
         .pipe(babel({
             presets: ['es2015']
-        }))    
+        }))  
         .pipe(concat('app.min.js'))      
         .pipe(uglify())
     .pipe(sourcemaps.write())

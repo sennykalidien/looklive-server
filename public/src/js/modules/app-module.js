@@ -12,6 +12,7 @@ APP.launcher = (function () {
         document.addEventListener("DOMContentLoaded", function () { 
             APP.router.init();
             APP.serviceworker.init();
+            APP.fonts.init();
         });            
     };    
     

@@ -150,10 +150,10 @@ I agree with the things mentioned above.
 
 [source](http://www.hongkiat.com/blog/gulp-vs-grunt/)
 
-I Use Gulp for:
-- Source Maps (link the minified JS or CSS files in the browser development tools to the original (unminified) file)
+I use Gulp for:
+- Source Maps (link the minified JS or CSS files in the browser development tools to the original (unminified) files)
 - Watch (if there is a file change, do certain tasks)
-- Concate (Bundle all files into one single file)
+- Concantate (Bundle all files into one single file)
 - Minify JS and CSS
 - Babel (ES6 --> ES5)
 - Image sprites
@@ -168,19 +168,72 @@ Action points with Gulp:
 
 ![HTTP request](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/gulp-minified.png)
 
-We keep on winning, from 1.80s --> 1.38s. That's 0.42s won in time. Yes!
+We keep on winning, from 1.80s --> 1.33s. That's 0.47s won in time. Yes!
 
-### Optimize Content Images
-![HTTP request](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/gulp-minified.png)
+### Optimize Content Images + Optimize Web Fons
+Action points:
+- Make responsive header image files (different sizes for different viewports)
+- Add FOUT solution for web font
 
-### Optimize Web Fonts
-- FOIT vs FOUT
+**FOIT vs FOUT**
+FOIT (Font Of Invisible Text) is the behaviour the browser is normally having when loading an external (web)font. The text will only show if the webfont is found and loaded. 
 
+FOUT (Font of Unstyled Text) is a method which alllows us to allways show the font (unstyled: so not loaded, while the external (web) font is still getting loaded. When this (web) font is succesfully loaded it will be added.
 
-### Optimize Content Images
+**How I implemented this*
+```
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Raleway Medium'), local('Raleway-Medium'), url(https://fonts.gstatic.com/s/raleway/v10/CcKI4k9un7TZVWzRVT-T8wzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+body, button, input, select, textarea   { 
+    font-size: 16px; font: 1em/1.4 sans-serif;  
+}
+
+.fonts-loaded body {
+  font-family: 'Raleway', sans-serif;
+}
+```
+
+The body gets a normal sans-serif font. So this font will show first. After the external (web)font is loaded (HTTP request) it gets added to the body afterwards. This will be done with the JavaScript library: [FontFaceObserver](https://github.com/bramstein/fontfaceobserver)
+
+**The code in my JS file**
+```
+APP.fonts = (function () {
+
+function init() {
+    var observer = new FontFaceObserver('Raleway');        
+    Promise.all([
+      observer.check()
+    ]).then(function () {
+        document.documentElement.className += "fonts-loaded";
+    });
+}
+
+return {
+    init: init
+};
+
+}());
+```
+
+As result of adding these two changes:
+
+![HTTP request](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/fonts_images.png.png)
+
+An increase in load time from 1.33s --> 1.58s (25ms)...
+
+### Conclusion
+Adding a gulp pipeline to concatenate and minify JS + CSS helps alot with the load time, which makes sense because the files will reduce in size size. Adding a FOUT solution to my webfonts increases the load time again with 25ms. But in order to make FOUT work i needed to add a library (FontFaceObserver) and some additional JavaScript code, which means 1 HTTP request more and an increase in file size. 
+
 
 
 ### EXTRA: Staging + Production environment
 
 
 ### EXTRA: Cookies
+

@@ -46,9 +46,22 @@
                 </li>
             </ul>
         </nav>
+        
+        <!--
         <figure class="header__banner" role="banner">
             <img src="/dist/images/header.jpg">
         </figure>
+        -->
+        
+        <picture class="header__banner">
+            <source type="image/jpg" srcset="/dist/images/header-large.jpg" media="(min-width: 1920w)" />
+            <source type="image/jpg" srcset="/dist/images/header-medium.jpg" media="(min-width: 960w)" />
+            <source type="image/jpg" srcset="/dist/images/header-small.jpg" media="(min-width: 480)"/>
+            <source srcset="/dist/images/header-large.jpg" media="(min-width: 1920w)" />
+            <source srcset="/dist/images/header-medium.jpg" media="(min-width: 960w)" />
+            <source srcset="/dist/images/header-small.jpg" media="(min-width: 480)"/>
+            <img src="/dist/images/header-large.jpg" alt="Kevin Spacey - House Of cards" />
+        </picture>
     </header>
    
     {{{body}}}
@@ -56,10 +69,12 @@
     <footer id="footer" role="footer"></footer>
     
     <!-- LIBS -->
-    <script src="/dist/js/lib/routie.min.js" defer></script> 
+    <script src="/dist/js/lib/routie.min.js"></script> 
+    <script src="/dist/js/lib/font-face-observer.min.js"></script> 
+    
     
     <!-- MAIN JS -->
-    <script src="/dist/js/app.min.js" defer></script>
+    <script src="/dist/js/app.min.js"></script>
     
     <!-- SERVICE WORKER -->
     <script src="sw.js"></script>
