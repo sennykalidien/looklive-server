@@ -3,6 +3,9 @@
 *********************************************************/      
 APP.router = (function () {
     function init () {
+        if (!window.location.hash) {
+            window.location = '/#home';
+        }        
         routie({
             'home': function() {
                 APP.page.feed();

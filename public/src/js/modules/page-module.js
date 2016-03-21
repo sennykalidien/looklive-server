@@ -2,6 +2,7 @@
 	PAGE MODULE [with Promise]
 *********************************************************/
 APP.page = (function () {
+    
     var mainSelector = document.querySelector('main');
 
     function request(method, url) { // src: http://stackoverflow.com/questions/30008114/how-do-i-promisify-native-xhr

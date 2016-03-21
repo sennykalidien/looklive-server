@@ -8,12 +8,12 @@ this.addEventListener('install', function(event) {
             console.log('caching', currentCacheName);
             return cache.addAll([
                 './',
-                '/dist/css/style.css',
-                '/assets/images/header.jpg',
-                '/assets/images/logo.png',
+                '/dist/css/style.min.css',
+                '/dist/images/header.jpg',
+                '/dist/images/logo.png',
                 '/dist/images/icons/icns-3319a2fd.svg',
                 '/dist/js/lib/routie.min.js',
-                '/dist/js/app.js',
+                '/dist/js/app.min.js',
                 '/sw.js',
                 '/api/feed',
                 'https://fonts.googleapis.com/css?family=Raleway:400'                

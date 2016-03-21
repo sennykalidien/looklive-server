@@ -6,39 +6,55 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     watch = require('gulp-watch'),
     notify = require('gulp-notify'),
-    autoprefixer = require('autoprefixer'),
+    autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
-    imageop = require('gulp-image-optimization');
+    imageop = require('gulp-image-optimization'),
+    sourcemaps = require('gulp-sourcemaps');
+    filesize = require('gulp-filesize');
 
-    var svgConfig = {
-        dest: '.',
-        shape: {
-            dimension: {
-                maxWidth: 15,
-                maxHeight: 15
-            },
-            spacing: {
-                padding: 5,
-            },
+
+var svgConfig = {
+    dest: '.',
+    shape: {
+        dimension: {
+            maxWidth: 15,
+            maxHeight: 15
         },
-        mode: {
-            css: {
-                dest: '.',
-                sprite: 'icns',
-                render: {
-                    css: true
-                },
-                example: true,
-                prefix: '.icn-'
-            }
+        spacing: {
+            padding: 5,
+        },
+    },
+    mode: {
+        css: {
+            dest: '.',
+            sprite: 'icns',
+            render: {
+                css: true
+            },
+            example: true,
+            prefix: '.icn-'
         }
-    };
+    }
+};
+
+var inputPaths = { 
+    'css': './public/src/css/*.css',
+    'js': './public/src/js/modules/*.js',
+    'svg': './public/src/images/icons/svg/*.svg' 
+};
+
+var outputPaths = { 
+    'css': './public/dist/css/',
+    'js': './public/dist/js/',
+    'images': './public/dist/images/',
+    'icons': './public/dist/images/icons/'    
+};
 
 
 gulp.task('icons', function () {
-    gulp.src('./public/assets/images/icons/svg/*.svg')
+    gulp.src(inputPaths.svg)
         .pipe(svgSprite(svgConfig))
-        .pipe(gulp.dest('./public/dist/images/icons/'));
+        .pipe(gulp.dest(outputPaths.icons));
 });
 
 
@@ -46,7 +62,7 @@ gulp.task('critical', function (cb) { //src: http://fourkitchens.com/blog/articl
     critical.generate({
         base: './',
         src: 'public/layout.html',
-        css: ['./public/assets/css/style.css'],
+        css: ['./public/src/css/reset.css','./public/src/css/style.css'],
         dimensions: [{
             width: 320,
             height: 480
@@ -66,10 +82,16 @@ gulp.task('critical', function (cb) { //src: http://fourkitchens.com/blog/articl
 
 
 gulp.task('scripts', function() {
-  return gulp.src('./public/assets/js/modules/*.js')
-    .pipe(concat('app.js'))      
-    .pipe(uglify())
-    .pipe(gulp.dest('./public/dist/js'))
+  return gulp.src(inputPaths.js)
+    .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['es2015']
+        }))    
+        .pipe(concat('app.min.js'))      
+        .pipe(uglify())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(outputPaths.js))
+    .pipe(filesize())
     .pipe(notify({
         message: 'Scripts task complete'
     }));    
@@ -77,20 +99,30 @@ gulp.task('scripts', function() {
 
 
 gulp.task('styles', function (cb) {
-    gulp.src(['./public/assets/css/*.css'])
-        .pipe(concat('style.css'))
-        .pipe(cssnano())
-        .pipe(gulp.dest('./public/dist/css/'))
+    gulp.src([inputPaths.css])  
+        .pipe(sourcemaps.init())
+            .pipe(autoprefixer())
+            .pipe(concat('style.min.css'))
+            .pipe(cssnano())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(outputPaths.css))
+        .pipe(filesize())
         .pipe(notify({
             message: 'Styles task complete'
         }));
 });
 
 
-gulp.task('images', function (cb) {
-    gulp.src(['./public/assets/images/*.png', './public/assets/images/*.jpg', './public/assets/images/*.gif', './public/assets/images/*.jpeg']).pipe(imageop({
+gulp.task('images', function (cb) { //https://www.npmjs.com/package/gulp-image-optimization 
+    gulp.src(['./public/src/images/*.png', './public/src/images/*.jpg', './public/src/images/*.gif', './public/src/images/*.jpeg']).pipe(imageop({
         optimizationLevel: 5,
         progressive: true,
         interlaced: true
-    })).pipe(gulp.dest('./public/dist/images/')).on('end', cb).on('error', cb);
+    })).pipe(gulp.dest(outputPaths.images)).on('end', cb).on('error', cb);
+});
+
+
+gulp.task('watch', function() {
+    gulp.watch(inputPaths.css, ['styles']);
+    gulp.watch(inputPaths.js, ['scripts']);
 });

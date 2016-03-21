@@ -3,15 +3,16 @@
 
 <head>
     <title>LookLive</title>
-    <link rel='stylesheet' href='/css/reset.css' />
-    <link rel='stylesheet' href='/css/style.css' />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">        
+    <link rel='stylesheet' href='dist/css/style.css' />
     <link href='https://fonts.googleapis.com/css?family=Raleway:400' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
     <header id="header" class="flexbox">
         <figure class="header__logo">
-            <a href="#home"><img src="/images/logo.png"></a>
+            <a href="#home"><img src="/dist/images/logo.png"></a>
         </figure>
         <nav id="nav" class "header__menu" role="menu">
             <ul class="header__menu__row flexbox">
@@ -36,23 +37,22 @@
             </ul>
         </nav>
         <figure class="header__banner" role="banner">
-            <img src="/images/header.jpg">
+            <img src="/dist/images/header.jpg">
         </figure>
     </header>
+   
+    <main id="main" role="main"></main>    
     
-    <footer id="footer" role="footer">
-    </footer>
+    <footer id="footer" role="footer"></footer>
     
     <!-- LIBS -->
-    <script src="/js/lib/routie.min.js"></script> 
-    <script src="/js/lib/nanoajax.min.js"></script>   
+    <script src="/dist/js/lib/routie.min.js"></script> 
     
     <!-- MAIN JS -->
-    <script src="/js/app.js"></script>
+    <script src="/dist/js/app.min.js"></script>
     
-    <!-- Modules -->
-    <script src="/js/modules/router-module.js"></script>
-    <script src="/js/modules/page-module.js"></script>  
+    <!-- SERVICE WORKER -->
+    <script src="sw.js"></script>
 </body>
 
 </html>
