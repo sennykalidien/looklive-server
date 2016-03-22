@@ -116,9 +116,11 @@ For a web app to be considered as “progressive” it must do these things:
 For this project I've already used Gulp, proudly I must say, as my Task Manager and I love it! But why am I using Gulp, or a task manager for that matter? Let's dive in! 
 
 **What's a task manager**
+
 A task manager is a automated JavaScript manager. They automate our task and excecute them without even thinking about it twice, if set up correctly.
 
-**Why use a task manager**
+**Why should you use a task manager**
+
 When you are creating (coding) en deploying in a front-end development website or application, task managers can be handy to take over some of your tasks. Most task managers use Node, and require you to create tasks and install plugins.
 
 Examples of tasks could be:
@@ -129,6 +131,7 @@ Examples of tasks could be:
 
 
 **Popular task managers**
+
 Most common task managers used nowadays are: 
 - Gulp
 - Grunt
@@ -139,7 +142,8 @@ Compared to in-memory operations, disk writes are slow which means that Gulp has
 
 [source](http://www.hongkiat.com/blog/gulp-vs-grunt/)
 
-**Why I'm using Gulp**
+**Why I use Gulp**
+
 Gulp is easy to set up, and give me everything I need to work with. It also looked and felt easier to set up and use, which was the biggest reason why I used Gulp. It seemed like the best task mange for a beginner (noob) like me. Although Grunt is more used. 
 
 "Grunt currently receives about 37,000 downloads a day on average, Gulp gets a bit more than half that, near the 23,000 mark."
@@ -223,7 +227,7 @@ return {
 
 As result of adding these two changes:
 
-![HTTP request](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/fonts_images.png.png)
+![HTTP request](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/fonts_images.png)
 
 An increase in load time from 1.33s --> 1.58s (25ms)...
 
@@ -231,9 +235,7 @@ An increase in load time from 1.33s --> 1.58s (25ms)...
 Adding a gulp pipeline to concatenate and minify JS + CSS helps alot with the load time, which makes sense because the files will reduce in size size. Adding a FOUT solution to my webfonts increases the load time again with 25ms. But in order to make FOUT work i needed to add a library (FontFaceObserver) and some additional JavaScript code, which means 1 HTTP request more and an increase in file size. 
 
 
-
 ### EXTRA: Staging + Production environment
 
 
 ### EXTRA: Cookies
-
