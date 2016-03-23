@@ -31,7 +31,8 @@ APP.page = (function () {
 
     function feed() {
         request('GET', 'api/feed')
-            .then(function (template) {
+            .then(function (APIdata) {
+                var template = JSON.parse(APIdata);
                 mainSelector.innerHTML = template;
             })
             .catch(function (err) {
