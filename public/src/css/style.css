@@ -1,0 +1,372 @@
+/*--------------------------------------------------------------
+>>> ABOUT:
+----------------------------------------------------------------
+    Author:         Senny Kalidien
+    Project:        PERFORMANCE MATTERS
+    Version:        0.1
+    External CSS:   -
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> COLORS:
+----------------------------------------------------------------
+    Background:     #ffffff;
+    Normal text:    #1e1e1e;	
+    Anchor:         #2980b9;
+    Buttons:        #2980b9;
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENT:
+----------------------------------------------------------------
+# TYPOGRAPHY & COLORS
+# TOOLS
+# STRUCTURE
+	## HEADER
+	## CONTENT
+        ### FEED
+        ### DETAIL PAGE
+	## FOOTER
+# EXTRA CSS
+	## MEDIA QUERIES
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# STRUCTURE
+--------------------------------------------------------------*/
+body {
+    font: Raleway, Helvetica, Arial, sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    max-width: 1920px;
+}
+
+#header { 
+    width: 100%;
+    overflow: hidden;
+    background-color: #252525;
+    flex-flow: column wrap;                               
+    align-items: center;    
+    align-content: center; 
+    justify-content: space-between;   
+}
+
+#main { 
+    flex-flow: column wrap;                             
+    align-items: center;    
+    align-content: center;
+    justify-content: space-between;  
+}
+
+#footer { 
+
+}
+
+
+/*--------------------------------------------------------------
+## HEADER
+--------------------------------------------------------------*/
+.header__logo { 
+    flex: 0 1 100%; 
+    padding: .5em 0 .5em 1em;
+}
+
+.header__banner { 
+    flex: 0 1 100%;
+}
+
+/* MENU */
+.header__menu {
+    background-color: #252525;
+    overflow: hidden;
+    flex: 0 1 100%;
+}
+
+.header__menu__row {
+    list-style: none;
+    margin: 0 auto;
+    flex-flow: row wrap;                             
+    align-items: center;    
+    align-content: center;    
+}
+
+.header__menu__list {
+    height: 100%;
+    line-height: 30px;
+    margin-right: 15px;
+}
+
+.header__menu__link {
+    color: white;
+    text-decoration: none;
+}
+
+.header__menu__link:hover {
+    color: #d84a4a;
+}
+
+.header__menu__img {
+    height: 1em;
+    position: relative;
+    margin-right: .3em;
+}
+
+
+/* ICONS */
+.header__menu__icn__home {
+ background: url("/dist/images/icons/icns-3319a2fd.svg") 50% -20% no-repeat;
+ width: 25px;
+ height: 23.09px;
+}
+
+.header__menu__icn__latest {
+ background: url("/dist/images/icons/icns-3319a2fd.svg") 0 78% no-repeat;
+ width: 23.8px;
+ height: 25px;
+}
+
+.header__menu__icn__people {
+ background: url("/dist/images/icons/icns-3319a2fd.svg") 100% -17% no-repeat;
+ width: 25px;
+ height: 23.33px;
+}
+
+.header__menu__icn__shows {
+ background: url("/dist/images/icons/icns-3319a2fd.svg") 100% 68% no-repeat;
+ width: 25px;
+ height: 22.48px;
+}
+
+.header__menu__icn__music {
+ background: url("/dist/images/icons/icns-3319a2fd.svg") 47.6% 78% no-repeat;
+ width: 25px;
+ height: 25px;
+}
+
+.header__menu__icn__brands {
+ background: url("/dist/images/icons/icns-3319a2fd.svg") 0 -29% no-repeat;
+ width: 25px;
+ height: 25px;
+}
+
+
+/*--------------------------------------------------------------
+## CONTENT
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+### FEED
+--------------------------------------------------------------*/
+.feed__items { 
+    flex-flow: row wrap;                              
+    align-items: flex-start;   
+    align-content: flex-start; 
+    justify-content: space-around;  
+}
+
+
+.feed__item {
+    flex-flow: row wrap;                               
+    align-items: center;     
+    align-content: center; 
+    justify-content: space-between;    
+    flex: 0 1 50%;
+}
+
+.feed__img { 
+    flex: 0 1 100%;
+    position: relative;
+}
+
+.feed__img a img { 
+    display: block;
+}
+
+.feed__person { 
+    position: absolute;
+    bottom: 0;
+    background: rgba(255,255,255,0.7);
+    padding: 0.5em;
+    width: 100%;
+    
+}
+
+.feed__person__avatar { 
+    max-width: 1.4em;
+    border-radius: 10em;
+    margin-right: 1em;
+}
+
+.feed__person__name {
+    font-size: 1em;
+    font-weight: bold;
+    display: inline;
+    position: relative;
+    top: -3px;
+}
+
+.feed__header { 
+    font-size: 1em;
+    min-height: 4em;   
+}
+
+/*--------------------------------------------------------------
+### DETAIL PAGE
+--------------------------------------------------------------*/
+.appearance { 
+    flex-flow: row wrap;                 
+    align-items: center;    
+    align-content: center; 
+    justify-content: space-around;    
+}
+
+.appearance__person { 
+    flex-flow: row wrap;                              
+    align-items: center;     
+    align-content: center; 
+    margin-bottom: 1em;
+}
+
+
+.appearance__person__avatar { 
+    max-width: 3em;
+    border-radius: 10em;
+    margin-right: 1em;
+}
+
+.appearance__left {
+    max-width: 400px;
+    position: relative;
+}
+
+.appearance__img {
+    width: 100%;
+}
+
+.appearance__indicator {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #00B7FF;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+}
+
+.appearance__indicator--active {
+    background-color: #b4da55;
+}
+
+.appearance__right { 
+    padding: 1em;
+    background: #f9f9f9;
+    margin: 0 0 2em;
+    width: 400px;
+}
+
+.appearance__products__inner {
+    position: relative;
+    overflow: hidden;
+    height: 700px;
+}
+
+.appearance__products { 
+    margin: 1.5em 0 0;
+}
+
+.appearance__product {
+    width: 450px;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform .3s;
+}
+
+.appearance__product--active {    
+    transform: translateX(0);
+}
+
+.appearance__products h1 {
+    font-size: 21px;
+    color: #333;
+    padding-bottom: .5em;
+    border-bottom: 1px solid #ddd;
+}
+
+.appearance__product__info { 
+    margin: 3em 0 0;
+}
+
+.appearance__product__actual, .appearance__product__similar {
+    display: flex;
+    padding-bottom: .5em;
+    border-bottom: 1px solid #ddd;
+}
+
+.appearance__product__actual__image, .appearance__product__similar__image {
+    width: 200px;
+    flex-shrink: 0;
+    margin-right: 1em;
+}
+
+.appearance__product__actual__image img, .appearance__product__similar__image img {
+    width: 100%;
+}
+
+.appearance__product__similar__image {
+    width: 150px;
+}
+
+.appearance__product__actual__image h2, .appearance__product__similar__image .image h2 {
+    margin: .5em 0;
+    color: #333;
+    border-bottom: none;
+}
+
+.appearance__product__actual__info h3, .appearance__product__similar__image h3 {
+    font-size: 21px;
+    margin: 1.5em 0 .5em 0;
+    border-bottom: none;
+}
+
+.appearance__product__actual__info h2, .appearance__product__similar__info .info h2 {
+    font-size: 16px;
+    margin: 1em 0;
+}
+
+
+/*--------------------------------------------------------------
+# EXTRA CSS
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## MEDIA QUERIES [Mobile First]
+--------------------------------------------------------------*/
+@media (min-width: 52em) {
+    #header { 
+        flex-flow: row wrap;      
+    }
+    .header__logo {  
+        flex: 0 1 10%; 
+    }
+    .header__menu {     
+        flex: 0 1 auto;
+        padding: .5em 1em .5em 0;
+    }
+    
+    .feed__item { 
+        flex: 0 1 33.33%;
+    } 
+}
+
+@media (min-width: 70em) {
+    .feed__item { 
+        flex: 0 1 25%;
+    }      
+}
+
+@media (min-width: 100em) {
+    .feed__item { 
+        flex: 0 1 20%;
+    }      
+}

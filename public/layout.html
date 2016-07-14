@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LookLive</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">        
+    <link rel='stylesheet' href='dist/css/style.css' />
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <header id="header" class="flexbox">
+        <figure class="header__logo">
+            <a href="#home"><img src="/dist/images/logo.png"></a>
+        </figure>
+        <nav id="nav" class "header__menu" role="menu">
+            <ul class="header__menu__row flexbox">
+                <li class="header__menu__list">
+                    <a class="header__menu__link" href="/"><i class="header__menu__icn__home"></i>Home</a>
+                </li>
+                <li class="header__menu__list">
+                    <a class="header__menu__link" href="https://looklive.com/discover/"><i class="header__menu__icn__latest"></i>Latest</a>
+                </li>
+                <li class="header__menu__list">
+                    <a class="header__menu__link" href="https://looklive.com/people/"><i class="header__menu__icn__people"></i>People</a>
+                </li>
+                <li class="header__menu__list">
+                    <a class="header__menu__link" href="https://looklive.com/shows/"><i class="header__menu__icn__shows"></i>Shows</a>
+                </li>
+                <li class="header__menu__list">
+                    <a class="header__menu__link" href="https://looklive.com/music/"><i class="header__menu__icn__music"></i>Music</a>
+                </li>
+                <li class="header__menu__list">
+                    <a class="header__menu__link" href="https://looklive.com/brands/"><i class="header__menu__icn__brands"></i>Brands</a>
+                </li>
+            </ul>
+        </nav>
+        <figure class="header__banner" role="banner">
+            <img src="/dist/images/header.jpg">
+        </figure>
+    </header>
+   
+    <main id="main" role="main"></main>    
+    
+    <footer id="footer" role="footer"></footer>
+    
+    <!-- LIBS -->
+    <script src="/dist/js/lib/routie.min.js"></script> 
+    
+    <!-- MAIN JS -->
+    <script src="/dist/js/app.min.js"></script>
+    
+    <!-- SERVICE WORKER -->
+    <script src="sw.js"></script>
+</body>
+
+</html>

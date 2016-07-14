@@ -1,31 +1,83 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>{{title}}</title>
-        <link rel='stylesheet' href='/styles/style.css' />
-        <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700,800,900,600,300,200,100' rel='stylesheet' type='text/css'>
-        <script src="/js/jquery.js"></script>
-        <script src="/js/app.js"></script>
-    </head>
-    <body>
-        <div class="nav">
-            <div class="nav-inner">
-                <div class="logo"><img src="/images/logo.png"></div>
-                <ul class="nav-items">
-                    <li><a href="/"><img src="/icons/png/home.png">Home</a></li>
-                    <li><a href="https://looklive.com/discover/"><img src="/icons/png/latest.png">Latest</a></li>
-                    <li><a href="https://looklive.com/people/"><img src="/icons/png/people.png">People</a></li>
-                    <li><a href="https://looklive.com/shows/"><img src="/icons/png/shows.png">Shows</a></li>
-                    <li><a href="https://looklive.com/music/"><img src="/icons/png/music.png">Music</a></li>
-                    <li><a href="https://looklive.com/brands/"><img src="/icons/png/brands.png">Brands</a></li>
-                </ul>
-                <div class="clear"></div>
-            </div>
-        </div>
-        <div class="header"><img src="/images/header.png"></div>
+<head>
+    <title>LookLive</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <!-- STYLESHEETS -->        
+    <link rel="preload" href="/dist/css/style.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/dist/css/style.min.css"></noscript>            
 
-        <div class="inner-wrapper">
-            {{{body}}}
-        </div>
-    </body>
+    <!-- FONTS -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400' rel='stylesheet' type='text/css'>              
+            
+    <script> /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
+    !function(e){"use strict";var t=function(t,n,r){function o(e){return i.body?e():void setTimeout(function(){o(e)})}function l(){d.addEventListener&&d.removeEventListener("load",l),d.media=r||"all"}var a,i=e.document,d=i.createElement("link");if(n)a=n;else{var s=(i.body||i.getElementsByTagName("head")[0]).childNodes;a=s[s.length-1]}var u=i.styleSheets;d.rel="stylesheet",d.href=t,d.media="only x",o(function(){a.parentNode.insertBefore(d,n?a:a.nextSibling)});var f=function(e){for(var t=d.href,n=u.length;n--;)if(u[n].href===t)return e();setTimeout(function(){f(e)})};return d.addEventListener&&d.addEventListener("load",l),d.onloadcssdefined=f,f(l),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this),function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(t){}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){e.clearInterval(n)})}}}(this);
+    </script>
+    
+    <style> /* CRITCAL CSS: https://www.smashingmagazine.com/2015/08/understanding-critical-css/ */
+    *,html{font-size:100%}*,body{margin:0}#header,i{overflow:hidden}*{padding:0;vertical-align:baseline;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}html{overflow-y:scroll;overflow-x:hidden;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background:#fff}body{color:333;font:Raleway,Helvetica,Arial,sans-serif;background-color:#f1f1f1;max-width:1920px}ul{list-style:none}a img{border:0}img{vertical-align:none;height:auto;max-width:100%}figure,footer,header,nav{display:block}:disabled{color:graytext;background-color:buttonface}a{text-decoration:none;color:#00B7FF}i{text-indent:200%;white-space:nowrap;display:inline-block}.flexbox{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex}#header{width:100%;background-color:#252525;-webkit-flex-flow:column wrap;-ms-flex-flow:column wrap;flex-flow:column wrap;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}.header__logo{max-width:10em;-webkit-box-flex:0;-webkit-flex:0 1 20%;-ms-flex:0 1 20%;flex:0 1 100%;padding:.5em 0 .5em 1em}.header__banner{-webkit-box-flex:0;-webkit-flex:0 1 100%;-ms-flex:0 1 100%;flex:0 1 100%}.header__menu__row{list-style:none;margin:0 auto;-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center}.header__menu__list{height:100%;line-height:30px;margin-right:15px}.header__menu__link{color:#fff;text-decoration:none}.header__menu__icn__home{background:url(/dist/images/icons/icns-3319a2fd.svg) 50% -20% no-repeat;width:25px;height:23.09px}.header__menu__icn__latest{background:url(/dist/images/icons/icns-3319a2fd.svg) 0 78% no-repeat;width:23.8px;height:25px}.header__menu__icn__people{background:url(/dist/images/icons/icns-3319a2fd.svg) 100% -17% no-repeat;width:25px;height:23.33px}.header__menu__icn__shows{background:url(/dist/images/icons/icns-3319a2fd.svg) 100% 68% no-repeat;width:25px;height:22.48px}.header__menu__icn__music{background:url(/dist/images/icons/icns-3319a2fd.svg) 47.6% 78% no-repeat;width:25px;height:25px}.header__menu__icn__brands{background:url(/dist/images/icons/icns-3319a2fd.svg) 0 -29% no-repeat;width:25px;height:25px}@media (min-width:52em){#header{-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap}.header__logo{max-width:10em;-webkit-box-flex:0;-webkit-flex:0 1 20%;-ms-flex:0 1 20%;flex:0 1 20%}}</style>    
+</head>
+
+<body>
+    <header id="header" class="flexbox">
+        <figure class="header__logo">
+            <a href="#home"><img src="/dist/images/logo.png"></a>
+        </figure>
+        <nav id="nav" class="header__menu" role="menu">
+            <ul class="header__menu__row flexbox">
+                <li class="header__menu__list">
+                    <a class="header__menu__link" href="/"><i class="header__menu__icn__home"></i>Home</a>
+                </li>
+                <li class="header__menu__list">
+                    <a class="header__menu__link" href="https://looklive.com/discover/"><i class="header__menu__icn__latest"></i>Latest</a>
+                </li>
+                <li class="header__menu__list">
+                    <a class="header__menu__link" href="https://looklive.com/people/"><i class="header__menu__icn__people"></i>People</a>
+                </li>
+                <li class="header__menu__list">
+                    <a class="header__menu__link" href="https://looklive.com/shows/"><i class="header__menu__icn__shows"></i>Shows</a>
+                </li>
+                <li class="header__menu__list">
+                    <a class="header__menu__link" href="https://looklive.com/music/"><i class="header__menu__icn__music"></i>Music</a>
+                </li>
+                <li class="header__menu__list">
+                    <a class="header__menu__link" href="https://looklive.com/brands/"><i class="header__menu__icn__brands"></i>Brands</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!--
+        <figure class="header__banner" role="banner">
+            <img src="/dist/images/header.jpg">
+        </figure>
+        -->
+        
+        <picture class="header__banner">
+            <source type="image/jpg" srcset="/dist/images/header-large.jpg" media="(min-width: 1920w)" />
+            <source type="image/jpg" srcset="/dist/images/header-medium.jpg" media="(min-width: 960w)" />
+            <source type="image/jpg" srcset="/dist/images/header-small.jpg" media="(min-width: 480)"/>
+            <source srcset="/dist/images/header-large.jpg" media="(min-width: 1920w)" />
+            <source srcset="/dist/images/header-medium.jpg" media="(min-width: 960w)" />
+            <source srcset="/dist/images/header-small.jpg" media="(min-width: 480)"/>
+            <img src="/dist/images/header-large.jpg" alt="Kevin Spacey - House Of cards" />
+        </picture>
+    </header>
+   
+    {{{body}}}
+    
+    <footer id="footer" role="footer"></footer>
+    
+    <!-- LIBS -->
+    <script src="/dist/js/lib/routie.min.js"></script> 
+    <script src="/dist/js/lib/font-face-observer.min.js"></script> 
+    
+    
+    <!-- MAIN JS -->
+    <script src="/dist/js/app.min.js"></script>
+    
+    <!-- SERVICE WORKER -->
+    <script src="sw.js"></script>
+</body>
+
 </html>
