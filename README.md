@@ -3,6 +3,13 @@ The project you're looking at is an [express.js](http://expressjs.com) project. 
 going to optimize the way this project works. In it's current state, the css is messy, the rendering isn't modern and
 overall the product is boring and not efficient. It's up to you to fix this and improve it.
 
+## Table of content
+1. [Getting started](#getting-started)
+2. [The performance](#the-performance)
+   1. [Week 1](#week-1)
+   2. [Week 2](#week-2)
+   3. [Week 3](#week-3)
+
 
 ## Getting started
 
@@ -31,7 +38,7 @@ npm start
 That will get the server to run on port 3000. If you go to [http://localhost:3000](http://localhost:3000) in your browser
 you should see an overview page.
 
-## The api
+### The api
 
 This project comes with a simple API. All you need to know for now is that there's three endpoints:
 
@@ -46,11 +53,13 @@ The API returns JSON (for now).
 ## The performance
 Tested *without* throttling, so with a standard WiFi connection...
 
-### Start with tracking
+### Week 1
+
+#### Start with tracking
 **0 - The first screenshot without any changes.**
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/start.png)
 
-### With Semantic HTML and CSS optimisation
+#### With Semantic HTML and CSS optimisation
 **1 - [x] Changed HTML elements to HTML5 elements.**
 
 **2 - [x] Added CSS classes according to the BEM method.**
@@ -61,7 +70,7 @@ Tested *without* throttling, so with a standard WiFi connection...
 
 Suprisingly enough, no big changes in load time were found, it was even longer (could be bacause of no use of throttling).
 
-### With image optimisation
+#### With image optimisation
 **0 - Header image (network tab in development tools):**
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/network_tab.png)
 
@@ -75,7 +84,7 @@ Big changes in load time: 2 seconds!
 
 No extra ms won in speed.
 
-### JavaScript WebApp
+#### JavaScript WebApp
 **1 - Removed jQuery:**
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/no-jquery.png)
 
@@ -86,12 +95,12 @@ Few more ms won.
 
 Andddd it's gone... More ms has been added to the aggregated time because of more JS code (scripts + libraries).
 
-### EXTRA: Cricital CSS + Gulp
+#### EXTRA: Cricital CSS + Gulp
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/critical-css.png)
 
 Yes, we are winning again!
 
-### Conclusion
+#### Conclusion
 I began this performance tracking with a aggregated time of 5.32 seconds. My first point of action to the performance were:
 - changing the HTML structure
 - changing CSS classes according to the BEM method
@@ -104,22 +113,22 @@ Transforming the website into a SPA increased the loading time by 76m (total: 2.
 My final change, adding Cricical CSS + making a gulp pipeline reduced the time with 44ms, making a nice aggregated time of 2.55 s in total.
 
 
-## Performance tracking: assignment week 2
+### Week 2
 Throttling: WiFi (30 Mb/s download, 15Mb upload).
 
 NOTE: Forgot to make a branch for the Service Worker :-(
 
-### Start with tracking
+#### Start with tracking
 **0 - Last time we ended here.**
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/critical-css.png)
 
 
-### With Service Worker
+#### With Service Worker
 ![Service Worker performance](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/service-worker.png)
 
 In the Service Worker I cached all static files (HTML, CSS, JS, images) and the API feed *on install*. This gives me a HUGE improvement! From 2.55s --> 1.38s = 1.17 seconds won in time. :shipit:
 
-### What is a Progressive Web App?
+#### What is a Progressive Web App?
 A Progressive Web App provides an native app user experience that is built using the following tools and features:
 
 - Progressive - They work for every user, regardless of the browser.
@@ -147,15 +156,15 @@ For a web app to be considered as “progressive” it must do these things:
 [Add Yosmani](https://addyosmani.com/blog/getting-started-with-progressive-web-apps/)
 [infrequently](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/)
 
-### Online web server: Digital Ocean
+#### Online web server: Digital Ocean
 [link to web server](https://performance.directzichtbaar.nl/)
 
-### Conclusion
+#### Conclusion
 
 
-## Performance tracking: assignment week 3
+### Week 3
 
-### Task Managers
+#### Task Managers
 For this project I've already used Gulp, proudly I must say, as my Task Manager and I love it! But why am I using Gulp, or a task manager for that matter? Let's dive in!
 
 **What's a task manager**
@@ -207,7 +216,7 @@ I use Gulp for:
 - Image optimization (optimize size)
 
 
-### Optimize HTTP Request
+#### Optimize HTTP Request
 Action points with Gulp:
 - Concatenate (bundle JS and CSS)
 - Uglify (minify JS)
@@ -217,7 +226,7 @@ Action points with Gulp:
 
 We keep on winning, from 1.80s --> 1.33s. That's 0.47s won in time. Yes!
 
-### Optimize Content Images + Optimize Web Fons
+#### Optimize Content Images + Optimize Web Fons
 Action points:
 - Make responsive header image files (different sizes for different viewports)
 - Add FOUT solution for web font
@@ -274,5 +283,5 @@ As result of adding these two changes:
 
 An increase in load time from 1.33s --> 1.58s (25ms)...
 
-### Conclusion
+#### Conclusion
 Adding a gulp pipeline to concatenate and minify JS + CSS helps alot with the load time, which makes sense because the files will reduce in size size. Adding a FOUT solution to my webfonts increases the load time again with 25ms. But in order to make FOUT work i needed to add a library (FontFaceObserver) and some additional JavaScript code, which means 1 HTTP request more and an increase in file size.
