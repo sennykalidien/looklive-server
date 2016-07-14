@@ -1,6 +1,49 @@
-# Performance Matters
+# LookLive server
+The project you're looking at is an [express.js](http://expressjs.com) project. You'll use it to get set up a development environment where you're
+going to optimize the way this project works. In it's current state, the css is messy, the rendering isn't modern and
+overall the product is boring and not efficient. It's up to you to fix this and improve it.
 
-## Performance tracking: assignment week 1
+
+## Getting started
+
+### Step 1 - clone the repo
+Github provides some instructions for this and we're assuming that you know how to clone this repo. If you're not sure,
+don't hesitate to raise your hand now and ask.
+
+### Step 2 - install dependencies
+In order to run the server you'll need to install express.js and it's dependencies. In order to do this, open up a
+terminal and navigate to your project folder (for example `cd ~/Projects/looklive-server`). When you've done this, type
+this command to run the instal:
+
+```
+npm install
+```
+
+That should get you setup.
+
+### Step 3 - running the server
+To run the server, stay at the 'root' of your project folder and type:
+
+```
+npm start
+```
+
+That will get the server to run on port 3000. If you go to [http://localhost:3000](http://localhost:3000) in your browser
+you should see an overview page.
+
+## The api
+
+This project comes with a simple API. All you need to know for now is that there's three endpoints:
+
+* `/api/feed/` <- returns a feed of appearances
+* `/api/appearance/:uuid` <- returns a single appearance, more detailed than in the feed. Replace `:uuid` with the
+appearance id.
+* `/api/product/:uuid` <- returns a single product, including similar and bargain products. Replace `:uuid` with the
+product id.
+
+The API returns JSON (for now).
+
+## The performance
 Tested *without* throttling, so with a standard WiFi connection...
 
 ### Start with tracking
@@ -36,7 +79,7 @@ No extra ms won in speed.
 **1 - Removed jQuery:**
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/no-jquery.png)
 
-Few more ms won. 
+Few more ms won.
 
 **2 - Transformed into a Single Page App:**
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/looklive-server/student/sennykalidien/timeline/webapp.png)
@@ -49,16 +92,16 @@ Andddd it's gone... More ms has been added to the aggregated time because of mor
 Yes, we are winning again!
 
 ### Conclusion
-I began this performance tracking with a aggregated time of 5.32 seconds. My first point of action to the performance were: 
-- changing the HTML structure 
-- changing CSS classes according to the BEM method 
-- adding better CSS markup with flexbox and transition: translate; 
+I began this performance tracking with a aggregated time of 5.32 seconds. My first point of action to the performance were:
+- changing the HTML structure
+- changing CSS classes according to the BEM method
+- adding better CSS markup with flexbox and transition: translate;
 
-These points didn't gave me much improvement in speed. Maybe in theory 1-3 ms. Practically nothing. The big changes in speed came around when I began to optimize the images (mainly the header.png image --> header.jpg) and remove the jQuery script. I bassicly bisected the aggregated time from 5.32 --> 2.21. 
+These points didn't gave me much improvement in speed. Maybe in theory 1-3 ms. Practically nothing. The big changes in speed came around when I began to optimize the images (mainly the header.png image --> header.jpg) and remove the jQuery script. I bassicly bisected the aggregated time from 5.32 --> 2.21.
 
-Transforming the website into a SPA increased the loading time by 76m (total: 2.99), which makes sense, because I've added some libraries and JavaScript code. 
+Transforming the website into a SPA increased the loading time by 76m (total: 2.99), which makes sense, because I've added some libraries and JavaScript code.
 
-My final change, adding Cricical CSS + making a gulp pipeline reduced the time with 44ms, making a nice aggregated time of 2.55 s in total. 
+My final change, adding Cricical CSS + making a gulp pipeline reduced the time with 44ms, making a nice aggregated time of 2.55 s in total.
 
 
 ## Performance tracking: assignment week 2
@@ -77,7 +120,7 @@ NOTE: Forgot to make a branch for the Service Worker :-(
 In the Service Worker I cached all static files (HTML, CSS, JS, images) and the API feed *on install*. This gives me a HUGE improvement! From 2.55s --> 1.38s = 1.17 seconds won in time. :shipit:
 
 ### What is a Progressive Web App?
-A Progressive Web App provides an native app user experience that is built using the following tools and features: 
+A Progressive Web App provides an native app user experience that is built using the following tools and features:
 
 - Progressive - They work for every user, regardless of the browser.
 - Responsive - They fit on every screen.
@@ -104,7 +147,7 @@ For a web app to be considered as “progressive” it must do these things:
 [Add Yosmani](https://addyosmani.com/blog/getting-started-with-progressive-web-apps/)
 [infrequently](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/)
 
-### Online web server: Digital Ocean 
+### Online web server: Digital Ocean
 [link to web server](https://performance.directzichtbaar.nl/)
 
 ### Conclusion
@@ -113,7 +156,7 @@ For a web app to be considered as “progressive” it must do these things:
 ## Performance tracking: assignment week 3
 
 ### Task Managers
-For this project I've already used Gulp, proudly I must say, as my Task Manager and I love it! But why am I using Gulp, or a task manager for that matter? Let's dive in! 
+For this project I've already used Gulp, proudly I must say, as my Task Manager and I love it! But why am I using Gulp, or a task manager for that matter? Let's dive in!
 
 **What's a task manager**
 
@@ -132,7 +175,7 @@ Examples of tasks could be:
 
 **Popular task managers**
 
-Most common task managers used nowadays are: 
+Most common task managers used nowadays are:
 - Gulp
 - Grunt
 
@@ -144,13 +187,13 @@ Compared to in-memory operations, disk writes are slow which means that Gulp has
 
 **Why I use Gulp**
 
-Gulp is easy to set up, and give me everything I need to work with. It also looked and felt easier to set up and use, which was the biggest reason why I used Gulp. It seemed like the best task mange for a beginner (noob) like me. Although Grunt is more used. 
+Gulp is easy to set up, and give me everything I need to work with. It also looked and felt easier to set up and use, which was the biggest reason why I used Gulp. It seemed like the best task mange for a beginner (noob) like me. Although Grunt is more used.
 
 "Grunt currently receives about 37,000 downloads a day on average, Gulp gets a bit more than half that, near the 23,000 mark."
 
 "Gulp is a good example that code over configuration can be a good thing when configuration gets a bit confusing. Other people say that while this is true and Gulp is easier to read, it is more difficult to write because piping can be a bit confusing."
 
-I agree with the things mentioned above. 
+I agree with the things mentioned above.
 
 [source](http://www.hongkiat.com/blog/gulp-vs-grunt/)
 
@@ -180,7 +223,7 @@ Action points:
 - Add FOUT solution for web font
 
 **FOIT vs FOUT**
-FOIT (Font Of Invisible Text) is the behaviour the browser is normally having when loading an external (web)font. The text will only show if the webfont is found and loaded. 
+FOIT (Font Of Invisible Text) is the behaviour the browser is normally having when loading an external (web)font. The text will only show if the webfont is found and loaded.
 
 FOUT (Font of Unstyled Text) is a method which alllows us to allways show the font (unstyled: so not loaded, while the external (web) font is still getting loaded. When this (web) font is succesfully loaded it will be added.
 
@@ -194,7 +237,7 @@ FOUT (Font of Unstyled Text) is a method which alllows us to allways show the fo
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
-body, button, input, select, textarea   { 
+body, button, input, select, textarea   {
     font-size: 16px; font: 1em/1.4 sans-serif;  
 }
 
@@ -232,10 +275,4 @@ As result of adding these two changes:
 An increase in load time from 1.33s --> 1.58s (25ms)...
 
 ### Conclusion
-Adding a gulp pipeline to concatenate and minify JS + CSS helps alot with the load time, which makes sense because the files will reduce in size size. Adding a FOUT solution to my webfonts increases the load time again with 25ms. But in order to make FOUT work i needed to add a library (FontFaceObserver) and some additional JavaScript code, which means 1 HTTP request more and an increase in file size. 
-
-
-### EXTRA: Staging + Production environment
-
-
-### EXTRA: Cookies
+Adding a gulp pipeline to concatenate and minify JS + CSS helps alot with the load time, which makes sense because the files will reduce in size size. Adding a FOUT solution to my webfonts increases the load time again with 25ms. But in order to make FOUT work i needed to add a library (FontFaceObserver) and some additional JavaScript code, which means 1 HTTP request more and an increase in file size.
